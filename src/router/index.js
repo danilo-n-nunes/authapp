@@ -1,12 +1,21 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import User from "../views/User";
 Vue.use(VueRouter);
 const routes = [
   {
     path: "/home",
     name: "home",
     component: Home,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/user",
+    name: "user",
+    component: User,
     meta: {
       requiresAuth: true
     }
